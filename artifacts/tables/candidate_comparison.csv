@@ -1,0 +1,3 @@
+model,rationale,cv_roc_auc_mean,cv_roc_auc_std,selection_gini,selection_brier_score
+logistic_regression,Transparent baseline with reviewable coefficient directions and a simple mathematical form.,0.8671246521961351,0.015232120900763167,0.751758555426091,0.13859167439657832
+gradient_boosting,Non-linear challenger that can learn interactions and thresholds but must earn its added complexity.,0.9227797503689358,0.010767355790764339,0.8633320386913019,0.10083764909070456
