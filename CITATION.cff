@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this educational project, please cite it as below."
+title: "Kepler Signals Under Uncertainty"
+type: software
+authors:
+  - family-names: Saberi
+    given-names: Maryam
+repository-code: "https://github.com/MaryamSa/Robust-prediction-under-uncertainty"
+license: MIT
+version: 0.2.0
+date-released: 2026-09-13

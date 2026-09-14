@@ -1,0 +1,105 @@
+{
+  "bootstrap_intervals": {
+    "brier_score": {
+      "estimate": 0.10404347466819838,
+      "lower_95": 0.09421358193415925,
+      "resamples": 500,
+      "upper_95": 0.11463196559533666
+    },
+    "roc_auc": {
+      "estimate": 0.9279579151389454,
+      "lower_95": 0.9154620330207905,
+      "resamples": 500,
+      "upper_95": 0.9399876969271871
+    }
+  },
+  "candidate_comparison": [
+    {
+      "cv_roc_auc_mean": 0.8671246521961351,
+      "cv_roc_auc_std": 0.015232120900763167,
+      "model": "logistic_regression",
+      "rationale": "Transparent baseline with reviewable coefficient directions and a simple mathematical form.",
+      "selection_brier_score": 0.13859167439657832,
+      "selection_gini": 0.751758555426091
+    },
+    {
+      "cv_roc_auc_mean": 0.9227797503689358,
+      "cv_roc_auc_std": 0.010767355790764339,
+      "model": "gradient_boosting",
+      "rationale": "Non-linear challenger that can learn interactions and thresholds but must earn its added complexity.",
+      "selection_brier_score": 0.10083764909070456,
+      "selection_gini": 0.8633320386913019
+    }
+  ],
+  "confidence_bin_internal_boundaries": [
+    0.026658600184790937,
+    0.26717815460303923,
+    0.7881326656447429,
+    0.9241494265291735
+  ],
+  "data": {
+    "candidate_fraction": 0.5008691333498883,
+    "doi": "https://doi.org/10.26133/NEA5",
+    "leakage_fields_excluded": [
+      "koi_score",
+      "koi_fpflag_nt",
+      "koi_fpflag_ss",
+      "koi_fpflag_co",
+      "koi_fpflag_ec",
+      "koi_disposition",
+      "koi_comment"
+    ],
+    "model_features": [
+      "log_period_days",
+      "impact_parameter",
+      "log_duration_hours",
+      "log_transit_depth_ppm",
+      "log_candidate_radius_earth",
+      "log_equilibrium_temperature_k",
+      "log_model_signal_to_noise",
+      "stellar_temperature_k",
+      "stellar_surface_gravity",
+      "log_stellar_radius_solar",
+      "kepler_magnitude"
+    ],
+    "name": "NASA Kepler Q1-Q17 DR25 KOI table",
+    "records": 8054,
+    "unique_host_stars": 6923
+  },
+  "generated_at_utc": "2026-09-13T16:22:14.319005+00:00",
+  "measurement_uncertainty": {
+    "draws": 100,
+    "fraction_interval_width_above_0_20": 0.34720496894409936,
+    "median_90pct_interval_width": 0.12747472726789869,
+    "median_probability_std": 0.044120110839937374,
+    "p90_90pct_interval_width": 0.39666360067596856,
+    "p90_probability_std": 0.12835631668865694,
+    "signals": 1610
+  },
+  "random_state": 42,
+  "sample_sizes": {
+    "calibration": 1611,
+    "selection": 1611,
+    "test": 1610,
+    "train": 3222
+  },
+  "selected_model": "gradient_boosting",
+  "selected_model_calibration": {
+    "intercept": -0.0263794081389065,
+    "slope": 1.0756625521195158
+  },
+  "selection_rule": {
+    "challenger_clears_hurdle": true,
+    "description": "Select gradient boosting only if selection Gini improves by at least 0.02 and selection Brier score does not worsen."
+  },
+  "test_metrics": {
+    "brier_score": 0.10404347466819838,
+    "calibration_intercept": 0.01754384753968518,
+    "calibration_slope": 0.9092489143794192,
+    "candidate_capture_top_20pct": 0.38089330024813894,
+    "expected_calibration_error": 0.01959821236956895,
+    "gini": 0.8559158302778909,
+    "log_loss": 0.3412586599417402,
+    "roc_auc": 0.9279579151389454
+  }
+}
